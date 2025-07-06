@@ -27,7 +27,7 @@ export function SectionCards({
   const isTrendingUp = trend === "up";
 
   return (
-    <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 rounded-2xl">
+    <Card className="bg-gray-800/50 backdrop-blur-sm border-gray-700/50 rounded-2xl hover:shadow-blue-500/20 hover:border-blue-500/30 transition-all duration-300 text-slate-100 hover:scale-[1.02]">
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardDescription className="text-gray-400">{title}</CardDescription>

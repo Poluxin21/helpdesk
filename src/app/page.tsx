@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { ChartLineLinear } from "@/components/lineChart";
+import { ChartLineInteractive } from "@/components/charts/lineChart";
 import Header from "@/components/header";
 import { Card } from "@/components/ui/card";
-import { SectionCards } from "@/components/sectionCards";
+import { SectionCards } from "@/components/charts/sectionCards";
+import { ChartConfig } from "@/components/ui/chart";
+import { ChartRadialStacked } from "@/components/charts/radialChart";
+import { ChartBarHorizontal } from "@/components/charts/blockChart";
 
 export default function Home() {
  
@@ -37,6 +40,30 @@ export default function Home() {
     }
   ];
 
+  const chartData = [
+    { date: "2024-01-01", desktop: 120 },
+    { date: "2024-02-01", desktop: 135 },
+    { date: "2024-03-01", desktop: 150 },
+    { date: "2024-04-01", desktop: 222 },
+    { date: "2024-05-01", desktop: 165 },
+    { date: "2024-06-01", desktop: 178 },
+    { date: "2024-07-01", desktop: 190 },
+    { date: "2024-08-01", desktop: 200 },
+    { date: "2024-09-01", desktop: 210 },
+    { date: "2024-10-01", desktop: 220 },
+    { date: "2024-11-01", desktop: 230 },
+    { date: "2024-12-01", desktop: 240 },
+  ];
+  
+  const chartConfig = {
+    views: {
+      label: "Tickets Recebidos",
+    },
+    desktop: {
+      label: "Desktop",
+      color: "#F1F5F9",
+    },
+  } satisfies ChartConfig
 
    return (
     <div className="min-h-screen p-6">
@@ -46,8 +73,17 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="w-120 mt-6">
-        <ChartLineLinear />
+      <div className="mt-6">
+        <ChartLineInteractive chartData={chartData} chartConfig={chartConfig}/>
+      </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-300 mt-5">
+          <div>
+            <ChartRadialStacked />
+          </div>
+          <div>
+            <ChartBarHorizontal />
+          </div>
       </div>
     </div>
   );
