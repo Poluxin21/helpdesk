@@ -69,7 +69,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="flex items-center p-4 bg-[#0a0a0a] text-white">
+    <header className="flex items-center p-4 bg-gray-900 text-white">
       <h1 className="text-2xl font-bold">Atlas Help Desk</h1>
       <nav className="px-auto ml-auto flex-grow">
         <ul className="flex space-x-4 px-15">

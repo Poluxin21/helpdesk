@@ -24,7 +24,7 @@ export default function Layout({ children }: LayoutProps) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#0a0a0a] text-white font-sans overflow-x-hidden">
+      <body className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <Header/>
         <div className="gradient-bg fixed top-0 left-0 w-full h-full z-[-1]" />
         <div className="relative z-10 min-h-screen">{children}</div>
